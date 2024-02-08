@@ -10,14 +10,17 @@ class LocomotiveEngineer
 
   end
 
-  def self.add_missing_stops
-    
+  def self.add_missing_stops(destination, **stops)
+    result = {**destination, stops: stops.values}
+    p result
   end
 
   def self.extend_route_information(route, more_route_information)
-    raise 'Please implement the LocomotiveEngineer.extend_route_information method'
+    result = {**route, **more_route_information}
+    p result
   end
 end
 
 
-LocomotiveEngineer.fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
+LocomotiveEngineer.extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})
+# => {"from": "Berlin", "to": "Hamburg", "length": "100", "speed": "50"}
