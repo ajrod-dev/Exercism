@@ -7,7 +7,6 @@ class Pangram
       end
     end
     result = result.chars.sort.to_set
-    p result
     result.size >= 26
   end
 end
