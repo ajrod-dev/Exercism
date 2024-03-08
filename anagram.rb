@@ -25,3 +25,22 @@ end
 target_word = "stone"
 candidate_words = ["stone", "tones", "banana", "tons", "notes", "Seton"]
 puts "Anagram set for '#{target_word}': #{find_anagrams(target_word, candidate_words)}"
+
+
+def find_anagrams(target, candidates)
+  sorted_target = target.downcase.chars.sort.join
+  anagrams = []
+
+  candidates.each do |candidate|
+    sorted_candidate = candidate.downcase.chars.sort.join
+
+    anagrams << candidate if sorted_candidate == sorted_target
+  end
+
+  anagrams
+end
+
+# Example usage:
+target_word = "stone"
+candidate_words = ["stone", "tone
+
